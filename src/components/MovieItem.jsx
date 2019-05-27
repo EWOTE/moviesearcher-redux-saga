@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import handleImgError from '../utils/index';
 import {
   Box,
   Typography,
@@ -11,11 +12,9 @@ import {
   CardActionArea
 } from '@material-ui/core';
 import StarRate from '@material-ui/icons/StarRate';
+import { makeStyles } from '@material-ui/core/styles';
 
-import fallbackImg from '../static/fallback.jpg';
-import { withStyles } from '@material-ui/core/styles';
-
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   grid: {
     display: 'flex'
   },
@@ -33,10 +32,9 @@ const styles = theme => ({
   star: {
     color: 'orange'
   }
-});
+}));
 
 const MovieItem = ({
-  classes,
   id,
   title,
   genres = [],
@@ -46,9 +44,7 @@ const MovieItem = ({
   backdropPath,
   isLoading
 }) => {
-  const handleImgError = e => {
-    e.target.src = fallbackImg;
-  };
+  const classes = useStyles();
   return (
     <Grid className={classes.grid} item md={4} lg={4} xl={4} xs={12} sm={6}>
       <Card className={classes.card}>
@@ -93,4 +89,4 @@ const MovieItem = ({
   );
 };
 
-export default withStyles(styles)(MovieItem);
+export default MovieItem;

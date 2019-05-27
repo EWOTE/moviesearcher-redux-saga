@@ -32,7 +32,7 @@ export const movies = {
 
 export const movieDetail = {
   request: id => action(MOVIE_DETAIL[REQUEST], { id }),
-  success: details => action(MOVIE_DETAIL[SUCCESS], { movie: details }),
+  success: detail => action(MOVIE_DETAIL[SUCCESS], { movie: detail }),
   failure: error => action(MOVIE_DETAIL[FAILURE], error)
 };
 

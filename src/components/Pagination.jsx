@@ -26,8 +26,6 @@ const useStyles = makeStyles({
     '&:hover': {
       background: '#303f9f'
     },
-    boxShadow:
-      '0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12)',
     transition:
       'background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
   },
@@ -36,7 +34,8 @@ const useStyles = makeStyles({
   },
   buttonDisabled: {
     color: 'rgba(255, 255, 255, 0.3)',
-    ':hover': {
+    padding: '0 15px',
+    '&:hover': {
       background: 'rgba(255, 255, 255, 0.12)'
     },
     boxShadow: 'none',
@@ -59,6 +58,8 @@ const Pagination = ({ pageCount, changePageNumber, currentPage }) => {
         disabledClassName={classes.buttonDisabled}
         pageLinkClassName={classes.link}
         nextClassName={classes.button}
+        nextLinkClassName={classes.button}
+        breakLinkClassName={classes.button}
         pageRangeDisplayed={9}
         marginPagesDisplayed={2}
         disableInitialCallback

@@ -9,7 +9,6 @@
     "axios": "^0.18.0",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
-    "lodash.debounce": "^4.0.8",
     "normalizr": "^3.3.0",
     "prettier": "^1.17.1",
     "prop-types": "^15.7.2",
